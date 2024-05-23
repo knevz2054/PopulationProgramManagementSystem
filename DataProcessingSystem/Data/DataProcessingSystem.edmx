@@ -1,0 +1,1061 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="DataProcessingSystemModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="tblAdmin">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Username" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblBarangay">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="brgyName" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblConductor">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fullName" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblDrinkingWater">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="sourceName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="sourceNumber" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblFamilyPlanningMethod">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="methodName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="methodType" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="methodNumber" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblHouse">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="houseNumber" Type="int" Nullable="false" />
+          <Property Name="houseAddress" Type="varchar" MaxLength="100" />
+          <Property Name="purokID" Type="int" Nullable="false" />
+          <Property Name="dwID" Type="int" Nullable="false" />
+          <Property Name="wID" Type="int" Nullable="false" />
+          <Property Name="wdID" Type="int" Nullable="false" />
+          <Property Name="tfID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblIndividual">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="firstName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="middleName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="lastName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Gender" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="birthDay" Type="date" Nullable="false" />
+          <Property Name="Age" Type="int" Nullable="false" />
+          <Property Name="civilStatus" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="occupationID" Type="int" Nullable="false" />
+          <Property Name="Income" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Relationship" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Head" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="member4ps" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="wantsTo" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Pregnant" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="fpmID" Type="int" Nullable="false" />
+          <Property Name="reasonID" Type="int" Nullable="false" />
+          <Property Name="houseID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblLog">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ActivityLog" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="DateTime" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblOccupation">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="occupationName" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblPurok">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="purokName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="brgyID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblReason">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="reasonName" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="reasonNumber" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblRespondent">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fullName" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblSurvey">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="conductorID" Type="int" Nullable="false" />
+          <Property Name="respondentID" Type="int" Nullable="false" />
+          <Property Name="houseID" Type="int" Nullable="false" />
+          <Property Name="endUserID" Type="int" Nullable="false" />
+          <Property Name="Date" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblToiletFacility">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="facilityName" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="facilityNumber" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblUser">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FullName" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Gender" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Position" Type="varchar" MaxLength="50" />
+          <Property Name="Access" Type="varchar" MaxLength="50" />
+          <Property Name="Status" Type="varchar" MaxLength="50" />
+          <Property Name="Username" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Password" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="DateRegistered" Type="date" Nullable="false" />
+          <Property Name="DateAssigned" Type="date" />
+        </EntityType>
+        <EntityType Name="tblWasteDisposal">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="disposalName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="disposalNumber" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblWaterSource">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="sourceName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="sourceNumber" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_tblHouse_tblDrinkingWater">
+          <End Role="tblDrinkingWater" Type="Self.tblDrinkingWater" Multiplicity="1" />
+          <End Role="tblHouse" Type="Self.tblHouse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblDrinkingWater">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tblHouse">
+              <PropertyRef Name="dwID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblHouse_tblPurok">
+          <End Role="tblPurok" Type="Self.tblPurok" Multiplicity="1" />
+          <End Role="tblHouse" Type="Self.tblHouse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblPurok">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tblHouse">
+              <PropertyRef Name="purokID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblHouse_tblToiletFacility">
+          <End Role="tblToiletFacility" Type="Self.tblToiletFacility" Multiplicity="1" />
+          <End Role="tblHouse" Type="Self.tblHouse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblToiletFacility">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tblHouse">
+              <PropertyRef Name="tfID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblHouse_tblWasteDisposal">
+          <End Role="tblWasteDisposal" Type="Self.tblWasteDisposal" Multiplicity="1" />
+          <End Role="tblHouse" Type="Self.tblHouse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblWasteDisposal">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tblHouse">
+              <PropertyRef Name="wdID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblHouse_tblWaterSource">
+          <End Role="tblWaterSource" Type="Self.tblWaterSource" Multiplicity="1" />
+          <End Role="tblHouse" Type="Self.tblHouse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblWaterSource">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tblHouse">
+              <PropertyRef Name="wID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblIndividual_tblFamilyPlanningMethod">
+          <End Role="tblFamilyPlanningMethod" Type="Self.tblFamilyPlanningMethod" Multiplicity="1" />
+          <End Role="tblIndividual" Type="Self.tblIndividual" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblFamilyPlanningMethod">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tblIndividual">
+              <PropertyRef Name="fpmID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblIndividual_tblHouse">
+          <End Role="tblHouse" Type="Self.tblHouse" Multiplicity="1" />
+          <End Role="tblIndividual" Type="Self.tblIndividual" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblHouse">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tblIndividual">
+              <PropertyRef Name="houseID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblIndividual_tblOccupation">
+          <End Role="tblOccupation" Type="Self.tblOccupation" Multiplicity="1" />
+          <End Role="tblIndividual" Type="Self.tblIndividual" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblOccupation">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tblIndividual">
+              <PropertyRef Name="occupationID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblIndividual_tblReason">
+          <End Role="tblReason" Type="Self.tblReason" Multiplicity="1" />
+          <End Role="tblIndividual" Type="Self.tblIndividual" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblReason">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tblIndividual">
+              <PropertyRef Name="reasonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblPurok_tblBarangay">
+          <End Role="tblBarangay" Type="Self.tblBarangay" Multiplicity="1" />
+          <End Role="tblPurok" Type="Self.tblPurok" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblBarangay">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tblPurok">
+              <PropertyRef Name="brgyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblSurvey_tblConductor">
+          <End Role="tblConductor" Type="Self.tblConductor" Multiplicity="1" />
+          <End Role="tblSurvey" Type="Self.tblSurvey" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblConductor">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tblSurvey">
+              <PropertyRef Name="conductorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblSurvey_tblHouse">
+          <End Role="tblHouse" Type="Self.tblHouse" Multiplicity="1" />
+          <End Role="tblSurvey" Type="Self.tblSurvey" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblHouse">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tblSurvey">
+              <PropertyRef Name="houseID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblSurvey_tblRespondent">
+          <End Role="tblRespondent" Type="Self.tblRespondent" Multiplicity="1" />
+          <End Role="tblSurvey" Type="Self.tblSurvey" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblRespondent">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tblSurvey">
+              <PropertyRef Name="respondentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblSurvey_tblUser">
+          <End Role="tblUser" Type="Self.tblUser" Multiplicity="1" />
+          <End Role="tblSurvey" Type="Self.tblSurvey" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblUser">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tblSurvey">
+              <PropertyRef Name="endUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DataProcessingSystemModelStoreContainer">
+          <EntitySet Name="tblAdmin" EntityType="Self.tblAdmin" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblBarangay" EntityType="Self.tblBarangay" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblConductor" EntityType="Self.tblConductor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblDrinkingWater" EntityType="Self.tblDrinkingWater" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblFamilyPlanningMethod" EntityType="Self.tblFamilyPlanningMethod" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblHouse" EntityType="Self.tblHouse" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblIndividual" EntityType="Self.tblIndividual" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblLog" EntityType="Self.tblLog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblOccupation" EntityType="Self.tblOccupation" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblPurok" EntityType="Self.tblPurok" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblReason" EntityType="Self.tblReason" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblRespondent" EntityType="Self.tblRespondent" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblSurvey" EntityType="Self.tblSurvey" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblToiletFacility" EntityType="Self.tblToiletFacility" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblUser" EntityType="Self.tblUser" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblWasteDisposal" EntityType="Self.tblWasteDisposal" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblWaterSource" EntityType="Self.tblWaterSource" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_tblHouse_tblDrinkingWater" Association="Self.FK_tblHouse_tblDrinkingWater">
+            <End Role="tblDrinkingWater" EntitySet="tblDrinkingWater" />
+            <End Role="tblHouse" EntitySet="tblHouse" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblHouse_tblPurok" Association="Self.FK_tblHouse_tblPurok">
+            <End Role="tblPurok" EntitySet="tblPurok" />
+            <End Role="tblHouse" EntitySet="tblHouse" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblHouse_tblToiletFacility" Association="Self.FK_tblHouse_tblToiletFacility">
+            <End Role="tblToiletFacility" EntitySet="tblToiletFacility" />
+            <End Role="tblHouse" EntitySet="tblHouse" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblHouse_tblWasteDisposal" Association="Self.FK_tblHouse_tblWasteDisposal">
+            <End Role="tblWasteDisposal" EntitySet="tblWasteDisposal" />
+            <End Role="tblHouse" EntitySet="tblHouse" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblHouse_tblWaterSource" Association="Self.FK_tblHouse_tblWaterSource">
+            <End Role="tblWaterSource" EntitySet="tblWaterSource" />
+            <End Role="tblHouse" EntitySet="tblHouse" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblIndividual_tblFamilyPlanningMethod" Association="Self.FK_tblIndividual_tblFamilyPlanningMethod">
+            <End Role="tblFamilyPlanningMethod" EntitySet="tblFamilyPlanningMethod" />
+            <End Role="tblIndividual" EntitySet="tblIndividual" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblIndividual_tblHouse" Association="Self.FK_tblIndividual_tblHouse">
+            <End Role="tblHouse" EntitySet="tblHouse" />
+            <End Role="tblIndividual" EntitySet="tblIndividual" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblIndividual_tblOccupation" Association="Self.FK_tblIndividual_tblOccupation">
+            <End Role="tblOccupation" EntitySet="tblOccupation" />
+            <End Role="tblIndividual" EntitySet="tblIndividual" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblIndividual_tblReason" Association="Self.FK_tblIndividual_tblReason">
+            <End Role="tblReason" EntitySet="tblReason" />
+            <End Role="tblIndividual" EntitySet="tblIndividual" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblPurok_tblBarangay" Association="Self.FK_tblPurok_tblBarangay">
+            <End Role="tblBarangay" EntitySet="tblBarangay" />
+            <End Role="tblPurok" EntitySet="tblPurok" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblSurvey_tblConductor" Association="Self.FK_tblSurvey_tblConductor">
+            <End Role="tblConductor" EntitySet="tblConductor" />
+            <End Role="tblSurvey" EntitySet="tblSurvey" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblSurvey_tblHouse" Association="Self.FK_tblSurvey_tblHouse">
+            <End Role="tblHouse" EntitySet="tblHouse" />
+            <End Role="tblSurvey" EntitySet="tblSurvey" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblSurvey_tblRespondent" Association="Self.FK_tblSurvey_tblRespondent">
+            <End Role="tblRespondent" EntitySet="tblRespondent" />
+            <End Role="tblSurvey" EntitySet="tblSurvey" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblSurvey_tblUser" Association="Self.FK_tblSurvey_tblUser">
+            <End Role="tblUser" EntitySet="tblUser" />
+            <End Role="tblSurvey" EntitySet="tblSurvey" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DataProcessingSystemModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="DataProcessingSystemEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tblAdmins" EntityType="DataProcessingSystemModel.tblAdmin" />
+          <EntitySet Name="tblBarangays" EntityType="DataProcessingSystemModel.tblBarangay" />
+          <EntitySet Name="tblConductors" EntityType="DataProcessingSystemModel.tblConductor" />
+          <EntitySet Name="tblDrinkingWaters" EntityType="DataProcessingSystemModel.tblDrinkingWater" />
+          <EntitySet Name="tblFamilyPlanningMethods" EntityType="DataProcessingSystemModel.tblFamilyPlanningMethod" />
+          <EntitySet Name="tblHouses" EntityType="DataProcessingSystemModel.tblHouse" />
+          <EntitySet Name="tblIndividuals" EntityType="DataProcessingSystemModel.tblIndividual" />
+          <EntitySet Name="tblLogs" EntityType="DataProcessingSystemModel.tblLog" />
+          <EntitySet Name="tblOccupations" EntityType="DataProcessingSystemModel.tblOccupation" />
+          <EntitySet Name="tblPuroks" EntityType="DataProcessingSystemModel.tblPurok" />
+          <EntitySet Name="tblReasons" EntityType="DataProcessingSystemModel.tblReason" />
+          <EntitySet Name="tblRespondents" EntityType="DataProcessingSystemModel.tblRespondent" />
+          <EntitySet Name="tblSurveys" EntityType="DataProcessingSystemModel.tblSurvey" />
+          <EntitySet Name="tblToiletFacilities" EntityType="DataProcessingSystemModel.tblToiletFacility" />
+          <EntitySet Name="tblUsers" EntityType="DataProcessingSystemModel.tblUser" />
+          <EntitySet Name="tblWasteDisposals" EntityType="DataProcessingSystemModel.tblWasteDisposal" />
+          <EntitySet Name="tblWaterSources" EntityType="DataProcessingSystemModel.tblWaterSource" />
+          <AssociationSet Name="FK_tblPurok_tblBarangay" Association="DataProcessingSystemModel.FK_tblPurok_tblBarangay">
+            <End Role="tblBarangay" EntitySet="tblBarangays" />
+            <End Role="tblPurok" EntitySet="tblPuroks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblSurvey_tblConductor" Association="DataProcessingSystemModel.FK_tblSurvey_tblConductor">
+            <End Role="tblConductor" EntitySet="tblConductors" />
+            <End Role="tblSurvey" EntitySet="tblSurveys" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblHouse_tblDrinkingWater" Association="DataProcessingSystemModel.FK_tblHouse_tblDrinkingWater">
+            <End Role="tblDrinkingWater" EntitySet="tblDrinkingWaters" />
+            <End Role="tblHouse" EntitySet="tblHouses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblIndividual_tblFamilyPlanningMethod" Association="DataProcessingSystemModel.FK_tblIndividual_tblFamilyPlanningMethod">
+            <End Role="tblFamilyPlanningMethod" EntitySet="tblFamilyPlanningMethods" />
+            <End Role="tblIndividual" EntitySet="tblIndividuals" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblHouse_tblPurok" Association="DataProcessingSystemModel.FK_tblHouse_tblPurok">
+            <End Role="tblPurok" EntitySet="tblPuroks" />
+            <End Role="tblHouse" EntitySet="tblHouses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblHouse_tblToiletFacility" Association="DataProcessingSystemModel.FK_tblHouse_tblToiletFacility">
+            <End Role="tblToiletFacility" EntitySet="tblToiletFacilities" />
+            <End Role="tblHouse" EntitySet="tblHouses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblHouse_tblWasteDisposal" Association="DataProcessingSystemModel.FK_tblHouse_tblWasteDisposal">
+            <End Role="tblWasteDisposal" EntitySet="tblWasteDisposals" />
+            <End Role="tblHouse" EntitySet="tblHouses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblHouse_tblWaterSource" Association="DataProcessingSystemModel.FK_tblHouse_tblWaterSource">
+            <End Role="tblWaterSource" EntitySet="tblWaterSources" />
+            <End Role="tblHouse" EntitySet="tblHouses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblIndividual_tblHouse" Association="DataProcessingSystemModel.FK_tblIndividual_tblHouse">
+            <End Role="tblHouse" EntitySet="tblHouses" />
+            <End Role="tblIndividual" EntitySet="tblIndividuals" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblSurvey_tblHouse" Association="DataProcessingSystemModel.FK_tblSurvey_tblHouse">
+            <End Role="tblHouse" EntitySet="tblHouses" />
+            <End Role="tblSurvey" EntitySet="tblSurveys" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblIndividual_tblOccupation" Association="DataProcessingSystemModel.FK_tblIndividual_tblOccupation">
+            <End Role="tblOccupation" EntitySet="tblOccupations" />
+            <End Role="tblIndividual" EntitySet="tblIndividuals" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblIndividual_tblReason" Association="DataProcessingSystemModel.FK_tblIndividual_tblReason">
+            <End Role="tblReason" EntitySet="tblReasons" />
+            <End Role="tblIndividual" EntitySet="tblIndividuals" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblSurvey_tblRespondent" Association="DataProcessingSystemModel.FK_tblSurvey_tblRespondent">
+            <End Role="tblRespondent" EntitySet="tblRespondents" />
+            <End Role="tblSurvey" EntitySet="tblSurveys" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblSurvey_tblUser" Association="DataProcessingSystemModel.FK_tblSurvey_tblUser">
+            <End Role="tblUser" EntitySet="tblUsers" />
+            <End Role="tblSurvey" EntitySet="tblSurveys" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="tblAdmin">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Username" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tblBarangay">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="brgyName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tblPuroks" Relationship="DataProcessingSystemModel.FK_tblPurok_tblBarangay" FromRole="tblBarangay" ToRole="tblPurok" />
+        </EntityType>
+        <EntityType Name="tblConductor">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fullName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tblSurveys" Relationship="DataProcessingSystemModel.FK_tblSurvey_tblConductor" FromRole="tblConductor" ToRole="tblSurvey" />
+        </EntityType>
+        <EntityType Name="tblDrinkingWater">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="sourceName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="sourceNumber" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="tblHouses" Relationship="DataProcessingSystemModel.FK_tblHouse_tblDrinkingWater" FromRole="tblDrinkingWater" ToRole="tblHouse" />
+        </EntityType>
+        <EntityType Name="tblFamilyPlanningMethod">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="methodName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="methodType" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="methodNumber" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="tblIndividuals" Relationship="DataProcessingSystemModel.FK_tblIndividual_tblFamilyPlanningMethod" FromRole="tblFamilyPlanningMethod" ToRole="tblIndividual" />
+        </EntityType>
+        <EntityType Name="tblHouse">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="houseNumber" Type="Int32" Nullable="false" />
+          <Property Name="houseAddress" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="purokID" Type="Int32" Nullable="false" />
+          <Property Name="dwID" Type="Int32" Nullable="false" />
+          <Property Name="wID" Type="Int32" Nullable="false" />
+          <Property Name="wdID" Type="Int32" Nullable="false" />
+          <Property Name="tfID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="tblDrinkingWater" Relationship="DataProcessingSystemModel.FK_tblHouse_tblDrinkingWater" FromRole="tblHouse" ToRole="tblDrinkingWater" />
+          <NavigationProperty Name="tblPurok" Relationship="DataProcessingSystemModel.FK_tblHouse_tblPurok" FromRole="tblHouse" ToRole="tblPurok" />
+          <NavigationProperty Name="tblToiletFacility" Relationship="DataProcessingSystemModel.FK_tblHouse_tblToiletFacility" FromRole="tblHouse" ToRole="tblToiletFacility" />
+          <NavigationProperty Name="tblWasteDisposal" Relationship="DataProcessingSystemModel.FK_tblHouse_tblWasteDisposal" FromRole="tblHouse" ToRole="tblWasteDisposal" />
+          <NavigationProperty Name="tblWaterSource" Relationship="DataProcessingSystemModel.FK_tblHouse_tblWaterSource" FromRole="tblHouse" ToRole="tblWaterSource" />
+          <NavigationProperty Name="tblIndividuals" Relationship="DataProcessingSystemModel.FK_tblIndividual_tblHouse" FromRole="tblHouse" ToRole="tblIndividual" />
+          <NavigationProperty Name="tblSurveys" Relationship="DataProcessingSystemModel.FK_tblSurvey_tblHouse" FromRole="tblHouse" ToRole="tblSurvey" />
+        </EntityType>
+        <EntityType Name="tblIndividual">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="firstName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="middleName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="lastName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Gender" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="birthDay" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Age" Type="Int32" Nullable="false" />
+          <Property Name="civilStatus" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="occupationID" Type="Int32" Nullable="false" />
+          <Property Name="Income" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="Relationship" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Head" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="member4ps" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="wantsTo" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Pregnant" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="fpmID" Type="Int32" Nullable="false" />
+          <Property Name="reasonID" Type="Int32" Nullable="false" />
+          <Property Name="houseID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="tblFamilyPlanningMethod" Relationship="DataProcessingSystemModel.FK_tblIndividual_tblFamilyPlanningMethod" FromRole="tblIndividual" ToRole="tblFamilyPlanningMethod" />
+          <NavigationProperty Name="tblHouse" Relationship="DataProcessingSystemModel.FK_tblIndividual_tblHouse" FromRole="tblIndividual" ToRole="tblHouse" />
+          <NavigationProperty Name="tblOccupation" Relationship="DataProcessingSystemModel.FK_tblIndividual_tblOccupation" FromRole="tblIndividual" ToRole="tblOccupation" />
+          <NavigationProperty Name="tblReason" Relationship="DataProcessingSystemModel.FK_tblIndividual_tblReason" FromRole="tblIndividual" ToRole="tblReason" />
+        </EntityType>
+        <EntityType Name="tblLog">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ActivityLog" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="DateTime" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="tblOccupation">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="occupationName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="tblIndividuals" Relationship="DataProcessingSystemModel.FK_tblIndividual_tblOccupation" FromRole="tblOccupation" ToRole="tblIndividual" />
+        </EntityType>
+        <EntityType Name="tblPurok">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="purokName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="brgyID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="tblBarangay" Relationship="DataProcessingSystemModel.FK_tblPurok_tblBarangay" FromRole="tblPurok" ToRole="tblBarangay" />
+          <NavigationProperty Name="tblHouses" Relationship="DataProcessingSystemModel.FK_tblHouse_tblPurok" FromRole="tblPurok" ToRole="tblHouse" />
+        </EntityType>
+        <EntityType Name="tblReason">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="reasonName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="reasonNumber" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="tblIndividuals" Relationship="DataProcessingSystemModel.FK_tblIndividual_tblReason" FromRole="tblReason" ToRole="tblIndividual" />
+        </EntityType>
+        <EntityType Name="tblRespondent">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fullName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tblSurveys" Relationship="DataProcessingSystemModel.FK_tblSurvey_tblRespondent" FromRole="tblRespondent" ToRole="tblSurvey" />
+        </EntityType>
+        <EntityType Name="tblSurvey">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="conductorID" Type="Int32" Nullable="false" />
+          <Property Name="respondentID" Type="Int32" Nullable="false" />
+          <Property Name="houseID" Type="Int32" Nullable="false" />
+          <Property Name="endUserID" Type="Int32" Nullable="false" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="tblConductor" Relationship="DataProcessingSystemModel.FK_tblSurvey_tblConductor" FromRole="tblSurvey" ToRole="tblConductor" />
+          <NavigationProperty Name="tblHouse" Relationship="DataProcessingSystemModel.FK_tblSurvey_tblHouse" FromRole="tblSurvey" ToRole="tblHouse" />
+          <NavigationProperty Name="tblRespondent" Relationship="DataProcessingSystemModel.FK_tblSurvey_tblRespondent" FromRole="tblSurvey" ToRole="tblRespondent" />
+          <NavigationProperty Name="tblUser" Relationship="DataProcessingSystemModel.FK_tblSurvey_tblUser" FromRole="tblSurvey" ToRole="tblUser" />
+        </EntityType>
+        <EntityType Name="tblToiletFacility">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="facilityName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="facilityNumber" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="tblHouses" Relationship="DataProcessingSystemModel.FK_tblHouse_tblToiletFacility" FromRole="tblToiletFacility" ToRole="tblHouse" />
+        </EntityType>
+        <EntityType Name="tblUser">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FullName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Gender" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Position" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Access" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Username" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="DateRegistered" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="DateAssigned" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="tblSurveys" Relationship="DataProcessingSystemModel.FK_tblSurvey_tblUser" FromRole="tblUser" ToRole="tblSurvey" />
+        </EntityType>
+        <EntityType Name="tblWasteDisposal">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="disposalName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="disposalNumber" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="tblHouses" Relationship="DataProcessingSystemModel.FK_tblHouse_tblWasteDisposal" FromRole="tblWasteDisposal" ToRole="tblHouse" />
+        </EntityType>
+        <EntityType Name="tblWaterSource">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="sourceName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="sourceNumber" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="tblHouses" Relationship="DataProcessingSystemModel.FK_tblHouse_tblWaterSource" FromRole="tblWaterSource" ToRole="tblHouse" />
+        </EntityType>
+        <Association Name="FK_tblPurok_tblBarangay">
+          <End Type="DataProcessingSystemModel.tblBarangay" Role="tblBarangay" Multiplicity="1" />
+          <End Type="DataProcessingSystemModel.tblPurok" Role="tblPurok" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblBarangay">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tblPurok">
+              <PropertyRef Name="brgyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblSurvey_tblConductor">
+          <End Type="DataProcessingSystemModel.tblConductor" Role="tblConductor" Multiplicity="1" />
+          <End Type="DataProcessingSystemModel.tblSurvey" Role="tblSurvey" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblConductor">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tblSurvey">
+              <PropertyRef Name="conductorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblHouse_tblDrinkingWater">
+          <End Type="DataProcessingSystemModel.tblDrinkingWater" Role="tblDrinkingWater" Multiplicity="1" />
+          <End Type="DataProcessingSystemModel.tblHouse" Role="tblHouse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblDrinkingWater">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tblHouse">
+              <PropertyRef Name="dwID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblIndividual_tblFamilyPlanningMethod">
+          <End Type="DataProcessingSystemModel.tblFamilyPlanningMethod" Role="tblFamilyPlanningMethod" Multiplicity="1" />
+          <End Type="DataProcessingSystemModel.tblIndividual" Role="tblIndividual" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblFamilyPlanningMethod">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tblIndividual">
+              <PropertyRef Name="fpmID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblHouse_tblPurok">
+          <End Type="DataProcessingSystemModel.tblPurok" Role="tblPurok" Multiplicity="1" />
+          <End Type="DataProcessingSystemModel.tblHouse" Role="tblHouse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblPurok">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tblHouse">
+              <PropertyRef Name="purokID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblHouse_tblToiletFacility">
+          <End Type="DataProcessingSystemModel.tblToiletFacility" Role="tblToiletFacility" Multiplicity="1" />
+          <End Type="DataProcessingSystemModel.tblHouse" Role="tblHouse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblToiletFacility">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tblHouse">
+              <PropertyRef Name="tfID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblHouse_tblWasteDisposal">
+          <End Type="DataProcessingSystemModel.tblWasteDisposal" Role="tblWasteDisposal" Multiplicity="1" />
+          <End Type="DataProcessingSystemModel.tblHouse" Role="tblHouse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblWasteDisposal">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tblHouse">
+              <PropertyRef Name="wdID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblHouse_tblWaterSource">
+          <End Type="DataProcessingSystemModel.tblWaterSource" Role="tblWaterSource" Multiplicity="1" />
+          <End Type="DataProcessingSystemModel.tblHouse" Role="tblHouse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblWaterSource">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tblHouse">
+              <PropertyRef Name="wID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblIndividual_tblHouse">
+          <End Type="DataProcessingSystemModel.tblHouse" Role="tblHouse" Multiplicity="1" />
+          <End Type="DataProcessingSystemModel.tblIndividual" Role="tblIndividual" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblHouse">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tblIndividual">
+              <PropertyRef Name="houseID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblSurvey_tblHouse">
+          <End Type="DataProcessingSystemModel.tblHouse" Role="tblHouse" Multiplicity="1" />
+          <End Type="DataProcessingSystemModel.tblSurvey" Role="tblSurvey" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblHouse">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tblSurvey">
+              <PropertyRef Name="houseID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblIndividual_tblOccupation">
+          <End Type="DataProcessingSystemModel.tblOccupation" Role="tblOccupation" Multiplicity="1" />
+          <End Type="DataProcessingSystemModel.tblIndividual" Role="tblIndividual" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblOccupation">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tblIndividual">
+              <PropertyRef Name="occupationID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblIndividual_tblReason">
+          <End Type="DataProcessingSystemModel.tblReason" Role="tblReason" Multiplicity="1" />
+          <End Type="DataProcessingSystemModel.tblIndividual" Role="tblIndividual" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblReason">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tblIndividual">
+              <PropertyRef Name="reasonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblSurvey_tblRespondent">
+          <End Type="DataProcessingSystemModel.tblRespondent" Role="tblRespondent" Multiplicity="1" />
+          <End Type="DataProcessingSystemModel.tblSurvey" Role="tblSurvey" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblRespondent">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tblSurvey">
+              <PropertyRef Name="respondentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblSurvey_tblUser">
+          <End Type="DataProcessingSystemModel.tblUser" Role="tblUser" Multiplicity="1" />
+          <End Type="DataProcessingSystemModel.tblSurvey" Role="tblSurvey" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblUser">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tblSurvey">
+              <PropertyRef Name="endUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DataProcessingSystemModelStoreContainer" CdmEntityContainer="DataProcessingSystemEntities">
+          <EntitySetMapping Name="tblAdmins">
+            <EntityTypeMapping TypeName="DataProcessingSystemModel.tblAdmin">
+              <MappingFragment StoreEntitySet="tblAdmin">
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblBarangays">
+            <EntityTypeMapping TypeName="DataProcessingSystemModel.tblBarangay">
+              <MappingFragment StoreEntitySet="tblBarangay">
+                <ScalarProperty Name="brgyName" ColumnName="brgyName" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblConductors">
+            <EntityTypeMapping TypeName="DataProcessingSystemModel.tblConductor">
+              <MappingFragment StoreEntitySet="tblConductor">
+                <ScalarProperty Name="fullName" ColumnName="fullName" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblDrinkingWaters">
+            <EntityTypeMapping TypeName="DataProcessingSystemModel.tblDrinkingWater">
+              <MappingFragment StoreEntitySet="tblDrinkingWater">
+                <ScalarProperty Name="sourceNumber" ColumnName="sourceNumber" />
+                <ScalarProperty Name="sourceName" ColumnName="sourceName" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblFamilyPlanningMethods">
+            <EntityTypeMapping TypeName="DataProcessingSystemModel.tblFamilyPlanningMethod">
+              <MappingFragment StoreEntitySet="tblFamilyPlanningMethod">
+                <ScalarProperty Name="methodNumber" ColumnName="methodNumber" />
+                <ScalarProperty Name="methodType" ColumnName="methodType" />
+                <ScalarProperty Name="methodName" ColumnName="methodName" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblHouses">
+            <EntityTypeMapping TypeName="DataProcessingSystemModel.tblHouse">
+              <MappingFragment StoreEntitySet="tblHouse">
+                <ScalarProperty Name="tfID" ColumnName="tfID" />
+                <ScalarProperty Name="wdID" ColumnName="wdID" />
+                <ScalarProperty Name="wID" ColumnName="wID" />
+                <ScalarProperty Name="dwID" ColumnName="dwID" />
+                <ScalarProperty Name="purokID" ColumnName="purokID" />
+                <ScalarProperty Name="houseAddress" ColumnName="houseAddress" />
+                <ScalarProperty Name="houseNumber" ColumnName="houseNumber" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblIndividuals">
+            <EntityTypeMapping TypeName="DataProcessingSystemModel.tblIndividual">
+              <MappingFragment StoreEntitySet="tblIndividual">
+                <ScalarProperty Name="houseID" ColumnName="houseID" />
+                <ScalarProperty Name="reasonID" ColumnName="reasonID" />
+                <ScalarProperty Name="fpmID" ColumnName="fpmID" />
+                <ScalarProperty Name="Pregnant" ColumnName="Pregnant" />
+                <ScalarProperty Name="wantsTo" ColumnName="wantsTo" />
+                <ScalarProperty Name="member4ps" ColumnName="member4ps" />
+                <ScalarProperty Name="Head" ColumnName="Head" />
+                <ScalarProperty Name="Relationship" ColumnName="Relationship" />
+                <ScalarProperty Name="Income" ColumnName="Income" />
+                <ScalarProperty Name="occupationID" ColumnName="occupationID" />
+                <ScalarProperty Name="civilStatus" ColumnName="civilStatus" />
+                <ScalarProperty Name="Age" ColumnName="Age" />
+                <ScalarProperty Name="birthDay" ColumnName="birthDay" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="lastName" ColumnName="lastName" />
+                <ScalarProperty Name="middleName" ColumnName="middleName" />
+                <ScalarProperty Name="firstName" ColumnName="firstName" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblLogs">
+            <EntityTypeMapping TypeName="DataProcessingSystemModel.tblLog">
+              <MappingFragment StoreEntitySet="tblLog">
+                <ScalarProperty Name="DateTime" ColumnName="DateTime" />
+                <ScalarProperty Name="ActivityLog" ColumnName="ActivityLog" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblOccupations">
+            <EntityTypeMapping TypeName="DataProcessingSystemModel.tblOccupation">
+              <MappingFragment StoreEntitySet="tblOccupation">
+                <ScalarProperty Name="occupationName" ColumnName="occupationName" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblPuroks">
+            <EntityTypeMapping TypeName="DataProcessingSystemModel.tblPurok">
+              <MappingFragment StoreEntitySet="tblPurok">
+                <ScalarProperty Name="brgyID" ColumnName="brgyID" />
+                <ScalarProperty Name="purokName" ColumnName="purokName" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblReasons">
+            <EntityTypeMapping TypeName="DataProcessingSystemModel.tblReason">
+              <MappingFragment StoreEntitySet="tblReason">
+                <ScalarProperty Name="reasonNumber" ColumnName="reasonNumber" />
+                <ScalarProperty Name="reasonName" ColumnName="reasonName" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblRespondents">
+            <EntityTypeMapping TypeName="DataProcessingSystemModel.tblRespondent">
+              <MappingFragment StoreEntitySet="tblRespondent">
+                <ScalarProperty Name="fullName" ColumnName="fullName" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblSurveys">
+            <EntityTypeMapping TypeName="DataProcessingSystemModel.tblSurvey">
+              <MappingFragment StoreEntitySet="tblSurvey">
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="endUserID" ColumnName="endUserID" />
+                <ScalarProperty Name="houseID" ColumnName="houseID" />
+                <ScalarProperty Name="respondentID" ColumnName="respondentID" />
+                <ScalarProperty Name="conductorID" ColumnName="conductorID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblToiletFacilities">
+            <EntityTypeMapping TypeName="DataProcessingSystemModel.tblToiletFacility">
+              <MappingFragment StoreEntitySet="tblToiletFacility">
+                <ScalarProperty Name="facilityNumber" ColumnName="facilityNumber" />
+                <ScalarProperty Name="facilityName" ColumnName="facilityName" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblUsers">
+            <EntityTypeMapping TypeName="DataProcessingSystemModel.tblUser">
+              <MappingFragment StoreEntitySet="tblUser">
+                <ScalarProperty Name="DateAssigned" ColumnName="DateAssigned" />
+                <ScalarProperty Name="DateRegistered" ColumnName="DateRegistered" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Access" ColumnName="Access" />
+                <ScalarProperty Name="Position" ColumnName="Position" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblWasteDisposals">
+            <EntityTypeMapping TypeName="DataProcessingSystemModel.tblWasteDisposal">
+              <MappingFragment StoreEntitySet="tblWasteDisposal">
+                <ScalarProperty Name="disposalNumber" ColumnName="disposalNumber" />
+                <ScalarProperty Name="disposalName" ColumnName="disposalName" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblWaterSources">
+            <EntityTypeMapping TypeName="DataProcessingSystemModel.tblWaterSource">
+              <MappingFragment StoreEntitySet="tblWaterSource">
+                <ScalarProperty Name="sourceNumber" ColumnName="sourceNumber" />
+                <ScalarProperty Name="sourceName" ColumnName="sourceName" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

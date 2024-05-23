@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d2baa7753cbc41d0a6dd590ab1fbf0a1" Name="Diagram1" ZoomLevel="63">
+        <EntityTypeShape EntityType="DataProcessingSystemModel.tblAdmin" Width="1.5" PointX="10.75" PointY="2.625" />
+        <EntityTypeShape EntityType="DataProcessingSystemModel.tblBarangay" Width="1.5" PointX="0.75" PointY="6.875" />
+        <EntityTypeShape EntityType="DataProcessingSystemModel.tblConductor" Width="1.5" PointX="8.25" PointY="14" />
+        <EntityTypeShape EntityType="DataProcessingSystemModel.tblDrinkingWater" Width="1.5" PointX="3" PointY="12" />
+        <EntityTypeShape EntityType="DataProcessingSystemModel.tblFamilyPlanningMethod" Width="1.5" PointX="5.25" PointY="10.625" />
+        <EntityTypeShape EntityType="DataProcessingSystemModel.tblHouse" Width="1.5" PointX="5.25" PointY="5.75" />
+        <EntityTypeShape EntityType="DataProcessingSystemModel.tblIndividual" Width="1.5" PointX="7.5" PointY="5" />
+        <EntityTypeShape EntityType="DataProcessingSystemModel.tblLog" Width="1.5" PointX="10.75" PointY="10.625" />
+        <EntityTypeShape EntityType="DataProcessingSystemModel.tblOccupation" Width="1.5" PointX="5.25" PointY="3.25" />
+        <EntityTypeShape EntityType="DataProcessingSystemModel.tblPurok" Width="1.5" PointX="3" PointY="6.625" />
+        <EntityTypeShape EntityType="DataProcessingSystemModel.tblReason" Width="1.5" PointX="5.25" PointY="13.25" />
+        <EntityTypeShape EntityType="DataProcessingSystemModel.tblRespondent" Width="1.5" PointX="8.25" PointY="11.625" />
+        <EntityTypeShape EntityType="DataProcessingSystemModel.tblSurvey" Width="1.5" PointX="10.5" PointY="6.25" />
+        <EntityTypeShape EntityType="DataProcessingSystemModel.tblToiletFacility" Width="1.5" PointX="3" PointY="3" />
+        <EntityTypeShape EntityType="DataProcessingSystemModel.tblUser" Width="1.5" PointX="8.25" PointY="0.75" />
+        <EntityTypeShape EntityType="DataProcessingSystemModel.tblWasteDisposal" Width="1.5" PointX="3" PointY="9.5" />
+        <EntityTypeShape EntityType="DataProcessingSystemModel.tblWaterSource" Width="1.5" PointX="3" PointY="14.625" />
+        <AssociationConnector Association="DataProcessingSystemModel.FK_tblPurok_tblBarangay" />
+        <AssociationConnector Association="DataProcessingSystemModel.FK_tblSurvey_tblConductor" />
+        <AssociationConnector Association="DataProcessingSystemModel.FK_tblHouse_tblDrinkingWater" />
+        <AssociationConnector Association="DataProcessingSystemModel.FK_tblIndividual_tblFamilyPlanningMethod" />
+        <AssociationConnector Association="DataProcessingSystemModel.FK_tblHouse_tblPurok" />
+        <AssociationConnector Association="DataProcessingSystemModel.FK_tblHouse_tblToiletFacility" />
+        <AssociationConnector Association="DataProcessingSystemModel.FK_tblHouse_tblWasteDisposal" />
+        <AssociationConnector Association="DataProcessingSystemModel.FK_tblHouse_tblWaterSource" />
+        <AssociationConnector Association="DataProcessingSystemModel.FK_tblIndividual_tblHouse" />
+        <AssociationConnector Association="DataProcessingSystemModel.FK_tblSurvey_tblHouse" />
+        <AssociationConnector Association="DataProcessingSystemModel.FK_tblIndividual_tblOccupation" />
+        <AssociationConnector Association="DataProcessingSystemModel.FK_tblIndividual_tblReason" />
+        <AssociationConnector Association="DataProcessingSystemModel.FK_tblSurvey_tblRespondent" />
+        <AssociationConnector Association="DataProcessingSystemModel.FK_tblSurvey_tblUser" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

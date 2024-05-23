@@ -1,0 +1,967 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{93017F4C-2344-47E2-83B2-0A4326721F58}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>DataProcessingSystem</RootNamespace>
+    <AssemblyName>DataProcessingSystem</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Users\Knevz Zosa\Desktop\PPO Profiling\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>10</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>PPO.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>46AE224B7B8565526773819255B603DA8475A5FD</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>DataProcessingSystem_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1000\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1400.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1400.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1400.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Class\Member.cs" />
+    <Compile Include="Data\DataProcessingSystem.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataProcessingSystem.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\DataProcessingSystem.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataProcessingSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\DataProcessingSystem.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataProcessingSystem.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tblAdmin.cs">
+      <DependentUpon>DataProcessingSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tblBarangay.cs">
+      <DependentUpon>DataProcessingSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tblConductor.cs">
+      <DependentUpon>DataProcessingSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tblDrinkingWater.cs">
+      <DependentUpon>DataProcessingSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tblFamilyPlanningMethod.cs">
+      <DependentUpon>DataProcessingSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tblHouse.cs">
+      <DependentUpon>DataProcessingSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tblIndividual.cs">
+      <DependentUpon>DataProcessingSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tblLog.cs">
+      <DependentUpon>DataProcessingSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tblOccupation.cs">
+      <DependentUpon>DataProcessingSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tblPurok.cs">
+      <DependentUpon>DataProcessingSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tblReason.cs">
+      <DependentUpon>DataProcessingSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tblRespondent.cs">
+      <DependentUpon>DataProcessingSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tblSurvey.cs">
+      <DependentUpon>DataProcessingSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tblToiletFacility.cs">
+      <DependentUpon>DataProcessingSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tblUser.cs">
+      <DependentUpon>DataProcessingSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tblWasteDisposal.cs">
+      <DependentUpon>DataProcessingSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tblWaterSource.cs">
+      <DependentUpon>DataProcessingSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmAddBarangay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmAddBarangay.Designer.cs">
+      <DependentUpon>frmAddBarangay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmAddDrinkingWater.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmAddDrinkingWater.Designer.cs">
+      <DependentUpon>frmAddDrinkingWater.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmAddFamilyPlanningMethod.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmAddFamilyPlanningMethod.Designer.cs">
+      <DependentUpon>frmAddFamilyPlanningMethod.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmAddOccupation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmAddOccupation.Designer.cs">
+      <DependentUpon>frmAddOccupation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmAddPurok.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmAddPurok.Designer.cs">
+      <DependentUpon>frmAddPurok.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmAddReason.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmAddReason.Designer.cs">
+      <DependentUpon>frmAddReason.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmAddToiletFacility.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmAddToiletFacility.Designer.cs">
+      <DependentUpon>frmAddToiletFacility.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmAddWasteDisposal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmAddWasteDisposal.Designer.cs">
+      <DependentUpon>frmAddWasteDisposal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmAddWaterSource.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmAddWaterSource.Designer.cs">
+      <DependentUpon>frmAddWaterSource.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmAdmin.Designer.cs">
+      <DependentUpon>frmAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmCategoryList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmCategoryList.Designer.cs">
+      <DependentUpon>frmCategoryList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmChangePassword.Designer.cs">
+      <DependentUpon>frmChangePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmDeleteLog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmDeleteLog.Designer.cs">
+      <DependentUpon>frmDeleteLog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmEncoder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmEncoder.Designer.cs">
+      <DependentUpon>frmEncoder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmEnumerator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmEnumerator.Designer.cs">
+      <DependentUpon>frmEnumerator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmGraph.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmGraph.Designer.cs">
+      <DependentUpon>frmGraph.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmHome.Designer.cs">
+      <DependentUpon>frmHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmQuickList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmQuickList.Designer.cs">
+      <DependentUpon>frmQuickList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmRegistration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmRegistration.Designer.cs">
+      <DependentUpon>frmRegistration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmSearch.Designer.cs">
+      <DependentUpon>frmSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmSearch4Ps.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmSearch4Ps.Designer.cs">
+      <DependentUpon>frmSearch4Ps.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmSearchFPUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmSearchFPUser.Designer.cs">
+      <DependentUpon>frmSearchFPUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmSearchHousehold.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmSearchHousehold.Designer.cs">
+      <DependentUpon>frmSearchHousehold.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmSearchPopulation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmSearchPopulation.Designer.cs">
+      <DependentUpon>frmSearchPopulation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmSearchPregnant.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmSearchPregnant.Designer.cs">
+      <DependentUpon>frmSearchPregnant.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmSearchReproductiveAge.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmSearchReproductiveAge.Designer.cs">
+      <DependentUpon>frmSearchReproductiveAge.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmSearchTeenagePregnancy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmSearchTeenagePregnancy.Designer.cs">
+      <DependentUpon>frmSearchTeenagePregnancy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmCategory.Designer.cs">
+      <DependentUpon>frmCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmSettingPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmSettingPanel.Designer.cs">
+      <DependentUpon>frmSettingPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmSurveyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmSurveyForm.Designer.cs">
+      <DependentUpon>frmSurveyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmSurveyDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmSurveyDetail.Designer.cs">
+      <DependentUpon>frmSurveyDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmUserPermit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmUserPermit.Designer.cs">
+      <DependentUpon>frmUserPermit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmViewer.Designer.cs">
+      <DependentUpon>frmViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmViewSummary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmViewSummary.Designer.cs">
+      <DependentUpon>frmViewSummary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmViewSurvey.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmViewSurvey.Designer.cs">
+      <DependentUpon>frmViewSurvey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmViewLog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmViewLog.Designer.cs">
+      <DependentUpon>frmViewLog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmViewUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmViewUser.Designer.cs">
+      <DependentUpon>frmViewUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <EmbeddedResource Include="Forms\frmAddBarangay.resx">
+      <DependentUpon>frmAddBarangay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmAddDrinkingWater.resx">
+      <DependentUpon>frmAddDrinkingWater.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmAddFamilyPlanningMethod.resx">
+      <DependentUpon>frmAddFamilyPlanningMethod.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmAddOccupation.resx">
+      <DependentUpon>frmAddOccupation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmAddPurok.resx">
+      <DependentUpon>frmAddPurok.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmAddReason.resx">
+      <DependentUpon>frmAddReason.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmAddToiletFacility.resx">
+      <DependentUpon>frmAddToiletFacility.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmAddWasteDisposal.resx">
+      <DependentUpon>frmAddWasteDisposal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmAddWaterSource.resx">
+      <DependentUpon>frmAddWaterSource.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmAdmin.resx">
+      <DependentUpon>frmAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmCategoryList.resx">
+      <DependentUpon>frmCategoryList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmChangePassword.resx">
+      <DependentUpon>frmChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmDeleteLog.resx">
+      <DependentUpon>frmDeleteLog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmEncoder.resx">
+      <DependentUpon>frmEncoder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmEnumerator.resx">
+      <DependentUpon>frmEnumerator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmGraph.resx">
+      <DependentUpon>frmGraph.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmHome.resx">
+      <DependentUpon>frmHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmQuickList.resx">
+      <DependentUpon>frmQuickList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmRegistration.resx">
+      <DependentUpon>frmRegistration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmSearch.resx">
+      <DependentUpon>frmSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmSearch4Ps.resx">
+      <DependentUpon>frmSearch4Ps.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmSearchFPUser.resx">
+      <DependentUpon>frmSearchFPUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmSearchHousehold.resx">
+      <DependentUpon>frmSearchHousehold.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmSearchPopulation.resx">
+      <DependentUpon>frmSearchPopulation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmSearchPregnant.resx">
+      <DependentUpon>frmSearchPregnant.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmSearchReproductiveAge.resx">
+      <DependentUpon>frmSearchReproductiveAge.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmSearchTeenagePregnancy.resx">
+      <DependentUpon>frmSearchTeenagePregnancy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmCategory.resx">
+      <DependentUpon>frmCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmSettingPanel.resx">
+      <DependentUpon>frmSettingPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmSurveyForm.resx">
+      <DependentUpon>frmSurveyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmSurveyDetail.resx">
+      <DependentUpon>frmSurveyDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmUserPermit.resx">
+      <DependentUpon>frmUserPermit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmViewer.resx">
+      <DependentUpon>frmViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmViewSummary.resx">
+      <DependentUpon>frmViewSummary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmViewSurvey.resx">
+      <DependentUpon>frmViewSurvey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmViewLog.resx">
+      <DependentUpon>frmViewLog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmViewUser.resx">
+      <DependentUpon>frmViewUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EntityDeploy Include="Data\DataProcessingSystem.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DataProcessingSystem.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="DataProcessingSystem_TemporaryKey.pfx" />
+    <None Include="Data\DataProcessingSystem.edmx.diagram">
+      <DependentUpon>DataProcessingSystem.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\app.manifest" />
+    <None Include="Properties\DataSources\DataProcessingSystem.Data.DataProcessingSystemEntities.datasource" />
+    <None Include="Properties\DataSources\DataProcessingSystem.Data.tblAdmin.datasource" />
+    <None Include="Properties\DataSources\DataProcessingSystem.Data.tblBarangay.datasource" />
+    <None Include="Properties\DataSources\DataProcessingSystem.Data.tblConductor.datasource" />
+    <None Include="Properties\DataSources\DataProcessingSystem.Data.tblDrinkingWater.datasource" />
+    <None Include="Properties\DataSources\DataProcessingSystem.Data.tblFamilyPlanningMethod.datasource" />
+    <None Include="Properties\DataSources\DataProcessingSystem.Data.tblHouse.datasource" />
+    <None Include="Properties\DataSources\DataProcessingSystem.Data.tblIndividual.datasource" />
+    <None Include="Properties\DataSources\DataProcessingSystem.Data.tblLog.datasource" />
+    <None Include="Properties\DataSources\DataProcessingSystem.Data.tblOccupation.datasource" />
+    <None Include="Properties\DataSources\DataProcessingSystem.Data.tblPurok.datasource" />
+    <None Include="Properties\DataSources\DataProcessingSystem.Data.tblReason.datasource" />
+    <None Include="Properties\DataSources\DataProcessingSystem.Data.tblRespondent.datasource" />
+    <None Include="Properties\DataSources\DataProcessingSystem.Data.tblSurvey.datasource" />
+    <None Include="Properties\DataSources\DataProcessingSystem.Data.tblToiletFacility.datasource" />
+    <None Include="Properties\DataSources\DataProcessingSystem.Data.tblUser.datasource" />
+    <None Include="Properties\DataSources\DataProcessingSystem.Data.tblWasteDisposal.datasource" />
+    <None Include="Properties\DataSources\DataProcessingSystem.Data.tblWaterSource.datasource" />
+    <None Include="Properties\DataSources\DataProcessingSystem.DataProcessingSystemDataSetTableAdapters.TableAdapterManager+UpdateOrderOption.datasource" />
+    <None Include="Properties\DataSources\DataProcessingSystem.DataProcessingSystemDataSetTableAdapters.TableAdapterManager.datasource" />
+    <None Include="Properties\DataSources\DataProcessingSystem.DataProcessingSystemDataSetTableAdapters.tblAdminTableAdapter.datasource" />
+    <None Include="Properties\DataSources\DataProcessingSystem.DataProcessingSystemDataSetTableAdapters.tblBarangayTableAdapter.datasource" />
+    <None Include="Properties\DataSources\DataProcessingSystem.DataProcessingSystemDataSetTableAdapters.tblConductorTableAdapter.datasource" />
+    <None Include="Properties\DataSources\DataProcessingSystem.DataProcessingSystemDataSetTableAdapters.tblDrinkingWaterTableAdapter.datasource" />
+    <None Include="Properties\DataSources\DataProcessingSystem.DataProcessingSystemDataSetTableAdapters.tblFamilyPlanningMethodTableAdapter.datasource" />
+    <None Include="Properties\DataSources\DataProcessingSystem.DataProcessingSystemDataSetTableAdapters.tblHouseTableAdapter.datasource" />
+    <None Include="Properties\DataSources\DataProcessingSystem.DataProcessingSystemDataSetTableAdapters.tblIndividualTableAdapter.datasource" />
+    <None Include="Properties\DataSources\DataProcessingSystem.DataProcessingSystemDataSetTableAdapters.tblLogTableAdapter.datasource" />
+    <None Include="Properties\DataSources\DataProcessingSystem.DataProcessingSystemDataSetTableAdapters.tblOccupationTableAdapter.datasource" />
+    <None Include="Properties\DataSources\DataProcessingSystem.DataProcessingSystemDataSetTableAdapters.tblPurokTableAdapter.datasource" />
+    <None Include="Properties\DataSources\DataProcessingSystem.DataProcessingSystemDataSetTableAdapters.tblReasonTableAdapter.datasource" />
+    <None Include="Properties\DataSources\DataProcessingSystem.DataProcessingSystemDataSetTableAdapters.tblRespondentTableAdapter.datasource" />
+    <None Include="Properties\DataSources\DataProcessingSystem.DataProcessingSystemDataSetTableAdapters.tblSurveyTableAdapter.datasource" />
+    <None Include="Properties\DataSources\DataProcessingSystem.DataProcessingSystemDataSetTableAdapters.tblToiletFacilityTableAdapter.datasource" />
+    <None Include="Properties\DataSources\DataProcessingSystem.DataProcessingSystemDataSetTableAdapters.tblUserTableAdapter.datasource" />
+    <None Include="Properties\DataSources\DataProcessingSystem.DataProcessingSystemDataSetTableAdapters.tblWasteDisposalTableAdapter.datasource" />
+    <None Include="Properties\DataSources\DataProcessingSystem.DataProcessingSystemDataSetTableAdapters.tblWaterSourceTableAdapter.datasource" />
+    <None Include="Properties\DataSources\frmAddBarangay.datasource" />
+    <None Include="Properties\DataSources\frmAddDrinkingWater.datasource" />
+    <None Include="Properties\DataSources\frmAddFamilyPlanningMethod.datasource" />
+    <None Include="Properties\DataSources\frmAddOccupation.datasource" />
+    <None Include="Properties\DataSources\frmAddPurok.datasource" />
+    <None Include="Properties\DataSources\frmAddReason.datasource" />
+    <None Include="Properties\DataSources\frmAddSector.datasource" />
+    <None Include="Properties\DataSources\frmAddToiletFacility.datasource" />
+    <None Include="Properties\DataSources\frmAddWasteDisposal.datasource" />
+    <None Include="Properties\DataSources\frmAddWaterSource.datasource" />
+    <None Include="Properties\DataSources\frmAdmin.datasource" />
+    <None Include="Properties\DataSources\frmCategory.datasource" />
+    <None Include="Properties\DataSources\frmCategoryList.datasource" />
+    <None Include="Properties\DataSources\frmChangePassword.datasource" />
+    <None Include="Properties\DataSources\frmEncoder.datasource" />
+    <None Include="Properties\DataSources\frmEnumerator.datasource" />
+    <None Include="Properties\DataSources\frmGraph.datasource" />
+    <None Include="Properties\DataSources\frmHome.datasource" />
+    <None Include="Properties\DataSources\frmLogin.datasource" />
+    <None Include="Properties\DataSources\frmQuickList.datasource" />
+    <None Include="Properties\DataSources\frmRegistration.datasource" />
+    <None Include="Properties\DataSources\frmSearch.datasource" />
+    <None Include="Properties\DataSources\frmSearch4Ps.datasource" />
+    <None Include="Properties\DataSources\frmSearchFPUser.datasource" />
+    <None Include="Properties\DataSources\frmSearchHousehold.datasource" />
+    <None Include="Properties\DataSources\frmSearchPopulation.datasource" />
+    <None Include="Properties\DataSources\frmSearchPregnant.datasource" />
+    <None Include="Properties\DataSources\frmSearchReproductiveAge.datasource" />
+    <None Include="Properties\DataSources\frmSearchTeenagePregnancy.datasource" />
+    <None Include="Properties\DataSources\frmSettingPanel.datasource" />
+    <None Include="Properties\DataSources\frmSummary.datasource" />
+    <None Include="Properties\DataSources\frmSurveyDetail.datasource" />
+    <None Include="Properties\DataSources\frmSurveyForm.datasource" />
+    <None Include="Properties\DataSources\frmUserPermit.datasource" />
+    <None Include="Properties\DataSources\frmViewer.datasource" />
+    <None Include="Properties\DataSources\frmViewLog.datasource" />
+    <None Include="Properties\DataSources\frmViewReport.datasource" />
+    <None Include="Properties\DataSources\frmViewSummary.datasource" />
+    <None Include="Properties\DataSources\frmViewSurvey.datasource" />
+    <None Include="Properties\DataSources\frmViewUser.datasource" />
+    <None Include="Properties\DataSources\Main.datasource" />
+    <None Include="Properties\DataSources\Program.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Data\DataProcessingSystem.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DataProcessingSystem.edmx</DependentUpon>
+      <LastGenOutput>DataProcessingSystem.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Data\DataProcessingSystem.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DataProcessingSystem.edmx</DependentUpon>
+      <LastGenOutput>DataProcessingSystem.cs</LastGenOutput>
+    </Content>
+    <Content Include="Icon\birth-control.jpg" />
+    <Content Include="Icon\close.png" />
+    <Content Include="Icon\exit.png" />
+    <Content Include="Icon\key.png" />
+    <Content Include="Icon\key2.png" />
+    <Content Include="Icon\keys.png" />
+    <Content Include="Icon\pass.jpg" />
+    <Content Include="Icon\magnifying.ico" />
+    <Content Include="Icon\pie.png" />
+    <Content Include="Icon\survey.png" />
+    <Content Include="Icon\fp.png" />
+    <Content Include="Icon\home.png" />
+    <Content Include="Icon\house.png" />
+    <Content Include="Icon\plus.png" />
+    <Content Include="Icon\population.jpg" />
+    <Content Include="Icon\setting.png" />
+    <Content Include="Icon\under age pregnancy.png" />
+    <Content Include="Icon\view.png" />
+    <Content Include="PPO.ico" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="DataProcessingSystem.pdb">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Data\DataProcessingSystem.Context.tt">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Data\DataProcessingSystem.tt">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="EntityFramework">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="EntityFramework.SqlServer">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Icon\birth-control.jpg">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Icon\close.png">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Icon\exit.png">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Icon\fp.png">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Icon\home.png">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Icon\house.png">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Icon\key.png">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Icon\key2.png">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Icon\keys.png">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Icon\magnifying.ico">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Icon\pass.jpg">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Icon\pie.png">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Icon\plus.png">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Icon\population.jpg">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Icon\setting.png">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Icon\survey.png">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Icon\under age pregnancy.png">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Icon\view.png">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.ReportViewer.Common">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.ReportViewer.DataVisualization">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.ReportViewer.ProcessingObjectModel">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
